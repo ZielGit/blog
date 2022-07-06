@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        {{-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> --}}
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <!-- Tailwind is included -->
         <link rel="stylesheet" href="{{ asset('admin-one/css/main.css?v=1652870200386') }}">
 
@@ -50,9 +50,11 @@
 
         {{-- @stack('modals') --}}
 
+        {{-- @livewireScripts --}}
+
         <!-- Scripts below are for demo only -->
         <script type="text/javascript" src="{{ asset('admin-one/js/main.min.js?v=1652870200386') }}"></script>
 
-        {{-- @livewireScripts --}}
+        @stack('scripts')
     </body>
 </html>

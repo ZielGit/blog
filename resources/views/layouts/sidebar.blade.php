@@ -8,18 +8,18 @@
       	<p class="menu-label">General</p>
 		<ul class="menu-list">
 			<li class="active">
-				<a href="index.html">
-					<span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
+				<a href="{{ route('admin.home') }}">
+					<span class="icon"><i class="mdi mdi-view-dashboard"></i></span>
 					<span class="menu-item-label">Dashboard</span>
 				</a>
 			</li>
 		</ul>
-      	<p class="menu-label">Examples</p>
+      	<p class="menu-label">Administrador</p>
 		<ul class="menu-list">
 			<li class="--set-active-tables-html">
-				<a href="tables.html">
-					<span class="icon"><i class="mdi mdi-table"></i></span>
-					<span class="menu-item-label">Tables</span>
+				<a href="{{ route('admin.categories.index') }}">
+					<span class="icon"><i class="mdi mdi-tag-outline"></i></span>
+					<span class="menu-item-label">Categorias</span>
 				</a>
 			</li>
 			<li class="--set-active-forms-html">
