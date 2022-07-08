@@ -18,14 +18,14 @@
 		<ul class="menu-list">
 			<li class="--set-active-tables-html">
 				<a href="{{ route('admin.categories.index') }}">
-					<span class="icon"><i class="mdi mdi-tag-outline"></i></span>
+					<span class="icon"><i class="mdi mdi-buffer"></i></span>
 					<span class="menu-item-label">Categorias</span>
 				</a>
 			</li>
 			<li class="--set-active-forms-html">
-				<a href="forms.html">
-					<span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
-					<span class="menu-item-label">Forms</span>
+				<a href="{{ route('admin.tags.index') }}">
+					<span class="icon"><i class="mdi mdi-tag-outline"></i></span>
+					<span class="menu-item-label">Etiquetas</span>
 				</a>
 			</li>
 			<li class="--set-active-profile-html">
