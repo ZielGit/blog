@@ -22,7 +22,7 @@
         <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
         <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 
-        {{-- @livewireStyles --}}
+        @livewireStyles
 
         <!-- Scripts -->
         {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
@@ -50,7 +50,7 @@
 
         {{-- @stack('modals') --}}
 
-        {{-- @livewireScripts --}}
+        @livewireScripts
 
         <!-- Scripts below are for demo only -->
         <script type="text/javascript" src="{{ asset('admin-one/js/main.min.js?v=1652870200386') }}"></script>

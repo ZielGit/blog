@@ -28,36 +28,20 @@
 					<span class="menu-item-label">Etiquetas</span>
 				</a>
 			</li>
+		</ul>
+		<p class="menu-label">Opciones de Blog</p>
+		<ul class="menu-list">
 			<li class="--set-active-profile-html">
-				<a href="profile.html">
-					<span class="icon"><i class="mdi mdi-account-circle"></i></span>
-					<span class="menu-item-label">Profile</span>
+				<a href="{{ route('admin.posts.index') }}">
+					<span class="icon"><i class="mdi mdi-clipboard"></i></span>
+					<span class="menu-item-label">Lista de post</span>
 				</a>
 			</li>
-			<li>
-				<a href="login.html">
-					<span class="icon"><i class="mdi mdi-lock"></i></span>
-					<span class="menu-item-label">Login</span>
+			<li class="--set-active-profile-html">
+				<a href="{{ route('admin.posts.create') }}">
+					<span class="icon"><i class="mdi mdi-file"></i></span>
+					<span class="menu-item-label">Crear nuevo post</span>
 				</a>
-			</li>
-			<li>
-				<a class="dropdown">
-					<span class="icon"><i class="mdi mdi-view-list"></i></span>
-					<span class="menu-item-label">Submenus</span>
-					<span class="icon"><i class="mdi mdi-plus"></i></span>
-				</a>
-				<ul>
-					<li>
-						<a href="#void">
-							<span>Sub-item One</span>
-						</a>
-					</li>
-					<li>
-						<a href="#void">
-							<span>Sub-item Two</span>
-						</a>
-					</li>
-				</ul>
 			</li>
 		</ul>
     </div>
