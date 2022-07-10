@@ -13,6 +13,7 @@
         <div class="card-content">
             <form action="{{ route('admin.posts.store') }}" method="post">
                 @csrf
+                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="field">
                     <label class="label" for="name">Name</label>
                     <div class="field-body">
@@ -74,7 +75,7 @@
                             @endforeach
                       </div>
                     </div>
-                    @error('tag_id')
+                    @error('tags')
                         <div class="bg-red-100 border border-red-400 text-red-700 px-3 py-2 rounded relative mt-2" role="alert">
                             <span class="block sm:inline">{{ $message }}</span>
                         </div>
@@ -86,14 +87,14 @@
                         <div class="field grouped multiline">
                             <div class="control">
                                 <label class="radio">
-                                    <input type="radio" name="sample-radio" value="1" checked>
+                                    <input type="radio" name="status" value="1" checked>
                                     <span class="check"></span>
                                     <span class="control-label">Borrador</span>
                                 </label>
                             </div>
                             <div class="control">
                                 <label class="radio">
-                                    <input type="radio" name="sample-radio" value="2">
+                                    <input type="radio" name="status" value="2">
                                     <span class="check"></span>
                                     <span class="control-label">Publicado</span>
                                 </label>
