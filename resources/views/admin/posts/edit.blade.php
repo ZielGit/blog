@@ -47,7 +47,7 @@
                 <hr>
                 <div class="field grouped">
                     <div class="control">
-                        <button type="submit" class="button green">Actualizar Etiqueta</button>
+                        <button type="submit" class="button green">Actualizar Post</button>
                     </div>
                     <div class="control">
                         <a href="{{ route('admin.posts.index') }}" class="button red">Cancelar</a>
