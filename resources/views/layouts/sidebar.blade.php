@@ -1,7 +1,7 @@
 <aside class="aside is-placed-left is-expanded">
     <div class="aside-tools">
         <div>
-            <b class="font-black">Blog</b>
+			<a href="{{ route('posts.index') }}"><b class="font-black">Blog</b></a>
         </div>
     </div>
     <div class="menu is-menu-main">

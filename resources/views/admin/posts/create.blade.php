@@ -11,7 +11,7 @@
 <section class="section main-section">
     <div class="card mb-6">
         <div class="card-content">
-            <form action="{{ route('admin.posts.store') }}" method="post">
+            <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 <div class="field">
@@ -103,6 +103,34 @@
                     </div>
                 </div>
                 <div class="field">
+                    <div class="grid grid-cols-2 ">
+                        <div>
+                            <img id="picture" class="w-96 h-96 object-cover object-center" src="https://cdn.pixabay.com/photo/2022/07/07/13/29/bern-7307196_960_720.jpg" alt="">
+                        </div>
+                        <div>
+                            <div class="field">
+                                <label class="label">Imagen que se mostrará en el post</label>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input type="file" name="file" id="file" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @error('file')
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-3 py-2 rounded relative mt-2" role="alert">
+                                    <span class="block sm:inline">{{ $message }}</span>
+                                </div>
+                            @enderror
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptatibus sapiente nulla omnis porro blanditiis? 
+                                Saepe distinctio nesciunt assumenda, ipsam sit numquam excepturi omnis aliquam, repellendus eveniet amet eos sequi!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
                     <label class="label" for="extract">Extracto</label>
                     <div class="control">
                         <textarea class="textarea" name="extract" id="extract"></textarea> 
@@ -163,5 +191,19 @@
             .catch( error => {
                 console.error( error );
             });
+
+        // Cambiar imagen
+        document.getElementById("file").addEventListener('change', cambiarImagen);
+
+        function cambiarImagen(event)
+        {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                document.getElementById("picture").setAttribute('src', event.target.result);
+            }
+
+            reader.readAsDataURL(file);
+        }
     </script>
 @endpush
