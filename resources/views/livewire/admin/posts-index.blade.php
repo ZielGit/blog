@@ -17,15 +17,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($posts as $post)
+                    @foreach ($posts as $admin_post)
                         <tr>
-                            <td>{{ $post->id }}</td>
-                            <td>{{ $post->name }}</td>
+                            <td>{{ $admin_post->id }}</td>
+                            <td>{{ $admin_post->name }}</td>
                             <td width="10px">
-                                <a href="{{ route('admin.posts.edit', $post) }}" class="button blue">Editar</a>
+                                <a href="{{ route('admin.posts.edit', $admin_post) }}" class="button blue">Editar</a>
                             </td>
                             <td width="10px">
-                                <form action="{{ route('admin.posts.destroy', $post) }}" method="post">
+                                <form action="{{ route('admin.posts.destroy', $admin_post) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="button red">Eliminar</button>

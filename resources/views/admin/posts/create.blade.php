@@ -13,7 +13,6 @@
         <div class="card-content">
             <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                 
                 @include('admin.posts.partials.form')
 

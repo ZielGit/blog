@@ -55,35 +55,36 @@ class PostController extends Controller
         return view('admin.posts.edit', compact('admin_post', 'categories', 'tags'));
     }
 
-    public function update(PostRequest $request, Post $post)
+    public function update(PostRequest $request, Post $admin_post)
     {
-        $post->update($request->all());
+        $admin_post->update($request->all());
 
         if ($request->file('file')) {
             $url = Storage::put('posts', $request->file('file'));
 
-            if ($post->image) {
-                Storage::delete($post->image->url);
+            if ($admin_post->image) {
+                Storage::delete($admin_post->image->url);
 
-                $post->image->update([
+                $admin_post->image->update([
                     'url' => $url
                 ]);
             } else {
-                $post->image()->create([
+                $admin_post->image()->create([
                     'url' => $url
                 ]);
             }
         }
 
         if ($request->tags) {
-            $post->tags()->attach($request->tags);
+            $admin_post->tags()->sync($request->tags);
         }
 
         return redirect()->route('admin.posts.index')->with('info', 'El post se actualizó con éxito');
     }
 
-    public function destroy(Post $post)
+    public function destroy(Post $admin_post)
     {
-        //
+        $admin_post->delete();
+        return redirect()->route('admin.posts.index');
     }
 }

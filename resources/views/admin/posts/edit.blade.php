@@ -11,7 +11,7 @@
 <section class="section main-section">
     <div class="card mb-6">
         <div class="card-content">
-            <form action="{{ route('admin.posts.update', $admin_post) }}" method="post">
+            <form action="{{ route('admin.posts.update', $admin_post) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">

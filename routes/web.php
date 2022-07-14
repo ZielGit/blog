@@ -26,7 +26,7 @@ Route::get('tag/{tag}', [PostController::class, 'tag'])->name('posts.tag');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('home', [HomeController::class, 'index'])->name('admin.home');
-    Route::resource('admin-categories', CategoryController::class)->names('admin.categories');
-    Route::resource('admin-tags', TagController::class)->names('admin.tags');
+    Route::resource('categories', CategoryController::class)->names('admin.categories');
+    Route::resource('tags', TagController::class)->names('admin.tags');
     Route::resource('admin-posts', AdminPostController::class)->names('admin.posts');
 });
