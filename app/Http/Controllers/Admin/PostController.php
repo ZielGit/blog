@@ -50,6 +50,8 @@ class PostController extends Controller
 
     public function edit(Post $admin_post)
     {
+        $this->authorize('author', $admin_post);
+
         $categories = Category::all();
         $tags = Tag::all();
         return view('admin.posts.edit', compact('admin_post', 'categories', 'tags'));
@@ -57,6 +59,8 @@ class PostController extends Controller
 
     public function update(PostRequest $request, Post $admin_post)
     {
+        $this->authorize('author', $admin_post);
+
         $admin_post->update($request->all());
 
         if ($request->file('file')) {
@@ -84,6 +88,8 @@ class PostController extends Controller
 
     public function destroy(Post $admin_post)
     {
+        $this->authorize('author', $admin_post);
+
         $admin_post->delete();
         return redirect()->route('admin.posts.index');
     }
